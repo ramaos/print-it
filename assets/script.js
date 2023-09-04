@@ -27,7 +27,7 @@ let img = document.getElementsByClassName("banner-img");
 let i = 0;
 let dotSelected = 0;
 
-right.addEventListener("click", function () {
+const suivant = function () {
   i += 1;
   if (i >= slides.length) {
     i = 0;
@@ -41,9 +41,9 @@ right.addEventListener("click", function () {
     dotSelected = 0;
   }
   dot[dotSelected].classList.add("dot_selected");
-});
+};
 
-left.addEventListener("click", function () {
+const precedent = function () {
   i -= 1;
   if (i < 0) {
     i = slides.length - 1;
@@ -56,4 +56,12 @@ left.addEventListener("click", function () {
     dotSelected = slides.length - 1;
   }
   dot[dotSelected].classList.add("dot_selected");
+};
+
+right.addEventListener("click", function () {
+  suivant();
+});
+
+left.addEventListener("click", function () {
+  precedent();
 });
