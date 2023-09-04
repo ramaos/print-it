@@ -65,3 +65,7 @@ right.addEventListener("click", function () {
 left.addEventListener("click", function () {
   precedent();
 });
+
+setInterval(() => {
+  suivant();
+}, 4000);
