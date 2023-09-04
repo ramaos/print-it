@@ -42,3 +42,18 @@ right.addEventListener("click", function () {
   }
   dot[dotSelected].classList.add("dot_selected");
 });
+
+left.addEventListener("click", function () {
+  i -= 1;
+  if (i < 0) {
+    i = slides.length - 1;
+  }
+  img[0].src = "assets/images/slideshow/" + slides[i].image;
+  paragraphe.innerHTML = slides[i].tagLine;
+  dot[dotSelected].classList.remove("dot_selected");
+  dotSelected -= 1;
+  if (dotSelected < 0) {
+    dotSelected = slides.length - 1;
+  }
+  dot[dotSelected].classList.add("dot_selected");
+});
